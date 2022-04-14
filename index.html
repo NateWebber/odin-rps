@@ -11,15 +11,27 @@
 </head>
 
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <h2>Play against the computer! First to five wins.</h2>
-    <h1 id="ScoreDisplay">Player - 0 : 0 - Computer</h1>
+    <div class="body-container">
+        <div class="title-bar">
+            <h1 id="RPSTitle">Rock Paper Scissors</h1>
+            <h2 id="RPSSubtitle">Play against the computer! First to five wins.</h2>
+        </div>
 
-    <h1 id="ResultsText">null</h1>
-    <button id="RockButton">Rock</button>
-    <button id="PaperButton">Paper</button>
-    <button id="ScissorsButton">Scissors</button>
-    <button id="ResetButton">Reset</button>
+        <div class="score-display">
+            <div><span>Player</span> - <span>Computer</span></div>
+        </div>
+
+        <h1 id="ResultsText">null</h1>
+
+        <div class="buttons-container">
+            <button class="game-button" id="RockButton">Rock</button>
+            <button class="game-button" id="PaperButton">Paper</button>
+            <button class="game-button" id="ScissorsButton">Scissors</button>
+        </div>
+
+        <button id="ResetButton">Reset</button>
+    </div>
+
 </body>
 
 </html>
