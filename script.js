@@ -1,6 +1,18 @@
+const rockButton = document.querySelector('#RockButton');
+const paperButton = document.querySelector('#PaperButton');
+const scissorsButton = document.querySelector('#ScissorsButton');
+const resetButton = document.querySelector('#ResetButton');
+
+rockButton.onclick = onRockPressed;
+paperButton.onclick = onPaperPressed;
+scissorsButton.onclick = onScissorsPressed;
+resetButton.onclick = newGame;
+
+const scoreDisplay = document.querySelector('#ScoreDisplay');
+const resultsText = document.querySelector('#ResultsText');
+
 let playerScore = 0;
 let computerScore = 0;
-
 
 function computerPlay() {
     let n = Math.floor(Math.random() * 3)
@@ -51,8 +63,63 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
+function onRockPressed() {
+    resultsText.textContent = playRound("rock", computerPlay());
+    resultsText.style.visibility = "visible";
+    scoreDisplay.textContent = `Player - ${playerScore} : ${computerScore} - Computer`;
+    if (playerScore == 5 || computerScore == 5) {
+        endGame();
+    }
+}
 
-function game() {
+function onPaperPressed() {
+    resultsText.textContent = playRound("paper", computerPlay());
+    resultsText.style.visibility = "visible";
+    scoreDisplay.textContent = `Player - ${playerScore} : ${computerScore} - Computer`;
+    if (playerScore == 5 || computerScore == 5) {
+        endGame();
+    }
+}
+
+function onScissorsPressed() {
+    resultsText.textContent = playRound("scissors", computerPlay());
+    resultsText.style.visibility = "visible";
+    scoreDisplay.textContent = `Player - ${playerScore} : ${computerScore} - Computer`;
+    if (playerScore == 5 || computerScore == 5) {
+        endGame();
+    }
+}
+
+function endGame() {
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+
+    if (playerScore == 5) {
+        resultsText.textContent = "You won! Congratulations!";
+    }
+    else {
+        resultsText.textContent = "You lost! Better luck next time!";
+    }
+    resultsText.style.visibility = "visible";
+}
+
+function newGame() {
+    playerScore = 0;
+    computerScore = 0;
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
+
+    scoreDisplay.textContent = `Player - ${playerScore} : ${computerScore} - Computer`;
+    resultsText.style.visibility = "hidden";
+}
+
+newGame();
+
+
+
+/*function game() {
     playerScore = 0;
     computerScore = 0;
 
@@ -71,7 +138,7 @@ function game() {
     else {
         return `You lost the game! Player Score: ${playerScore} Computer Score: ${computerScore}`
     }
-}
+}*/
 
-console.log(game());
+//console.log(game());
 
