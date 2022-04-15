@@ -1,10 +1,24 @@
 * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
+
+}
+html{
+    overflow: hidden;
+}
+
+body, html{
+    height: 100%;
+    width: 100%;
 }
 
 body {
     background-color: #f2f4f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100;
+    max-width: 100%;
 }
 
 #ResultsText {
@@ -19,6 +33,8 @@ body {
     color: #f2f4f3;
     border: none;
     background-color: black;
+    height: 30px;
+    width: 60px;
 }
 
 #ScoreNumbers {
@@ -34,6 +50,7 @@ body {
     flex-direction: column;
     gap: 16px;
     align-items: center;
+    flex: 8;
 }
 
 .title-bar {
@@ -49,10 +66,18 @@ body {
     border: none;
     background-color: #cf5c36;
     color: #f2f4f3;
-    width: 60px;
-    height: 40px;
+    width: 80px;
+    height: 50px;
 }
 
 .game-button:disabled{
     background-color: gray;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: end;
+    padding: 16px;
 }
