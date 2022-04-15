@@ -9,6 +9,7 @@ scissorsButton.onclick = onScissorsPressed;
 resetButton.onclick = newGame;
 
 const scoreDisplay = document.querySelector('#ScoreDisplay');
+const scoreNumbers = document.querySelector('#ScoreNumbers')
 const resultsText = document.querySelector('#ResultsText');
 
 let playerScore = 0;
@@ -66,7 +67,7 @@ function playRound(playerChoice, computerChoice) {
 function onRockPressed() {
     resultsText.textContent = playRound("rock", computerPlay());
     resultsText.style.visibility = "visible";
-    scoreDisplay.textContent = `${playerScore} : ${computerScore}`;
+    scoreNumbers.textContent = `${playerScore} : ${computerScore}`;
     if (playerScore == 5 || computerScore == 5) {
         endGame();
     }
@@ -75,7 +76,7 @@ function onRockPressed() {
 function onPaperPressed() {
     resultsText.textContent = playRound("paper", computerPlay());
     resultsText.style.visibility = "visible";
-    scoreDisplay.textContent = `${playerScore} : ${computerScore}`;
+    scoreNumbers.textContent = `${playerScore} : ${computerScore}`;
     if (playerScore == 5 || computerScore == 5) {
         endGame();
     }
@@ -84,7 +85,7 @@ function onPaperPressed() {
 function onScissorsPressed() {
     resultsText.textContent = playRound("scissors", computerPlay());
     resultsText.style.visibility = "visible";
-    scoreDisplay.textContent = `${playerScore} : ${computerScore}`;
+    scoreNumbers.textContent = `${playerScore} : ${computerScore}`;
     if (playerScore == 5 || computerScore == 5) {
         endGame();
     }
@@ -111,7 +112,7 @@ function newGame() {
     paperButton.disabled = false;
     scissorsButton.disabled = false;
 
-    scoreDisplay.textContent = `${playerScore} : ${computerScore}`;
+    scoreNumbers.textContent = `${playerScore} : ${computerScore}`;
     resultsText.style.visibility = "hidden";
 }
 

@@ -3,7 +3,7 @@
     margin: 0;
 }
 
-body{
+body {
     background-color: #f2f4f3;
 }
 
@@ -11,34 +11,22 @@ body{
     visibility: hidden;
 }
 
-#RPSTitle, #RPSSubtitle{
+#RPSTitle, #RPSSubtitle {
     color: #f2f4f3;
 }
 
-#ResetButton{
+#ResetButton {
     color: #f2f4f3;
     border: none;
     background-color: black;
 }
 
-/*Score Display Centering Trick:
-https://stackoverflow.com/questions/22763127/aligning-text-on-a-specific-character*/
-.score-display{
-    display: flex;
-    font-size: 32px;
+#ScoreNumbers {
+    font-size: 72px;
 }
 
-.score-display div span {
-    flex: 1;
-}
-
-.score-display div span:first-of-type {
-    text-align: right;
-    padding-right: 5px;
-}
-
-.score-display div span:last-of-type{
-    padding-left: 5px;
+#ScoreDisplay {
+    font-size: 48px;
 }
 
 .body-container {
@@ -63,4 +51,8 @@ https://stackoverflow.com/questions/22763127/aligning-text-on-a-specific-charact
     color: #f2f4f3;
     width: 60px;
     height: 40px;
+}
+
+.game-button:disabled{
+    background-color: gray;
 }
